@@ -1,0 +1,98 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+// .h
+class String
+{
+private:
+	char *data;
+public:
+	String();
+	String(const String & src);
+	explicit String(const char *src);
+	~String();
+	void set(const char *src);
+	const char *get();
+};
+
+// .cpp
+String::String() : data(nullptr)
+{ cout << "String::String() : " << this << endl; }
+String::~String()
+{
+	cout << "String::~String() : " << this << endl; 
+	if (data)
+		delete[] data;
+}
+
+String::String(const String & src) : data(nullptr)
+{
+	cout << "String::String(const String & src) : " << this << endl; 
+//	set(src.get());
+	int n = src.data && *src.data ? strlen(src.data) : 0;
+	if (n)
+		data = new char[n+1];
+	if (data)
+		strcpy(data, src.data);
+}
+
+String::String(const char *src) : data(nullptr)
+{
+	cout << "String::String(const char *src) : " << this << endl; 
+	int n = src && *src ? strlen(src) : 0;
+	if (n)
+		data = new char[n+1];
+	if (data)
+		strcpy(data, src);
+}
+
+void String::set(const char *src)
+{
+	if (data)
+		delete[] data;
+	int n = src && *src ? strlen(src) : 0;
+	data = n ? new char[n+1] : nullptr;
+	if (data)
+		strcpy(data, src);
+}
+
+const char *String::get()
+{
+	return data ? data : "";
+}
+
+void out(String s)
+{
+	cout << s.get() << endl;
+}
+
+void out2(String &s)
+{
+	cout << s.get() << endl;
+}
+
+int main()
+{
+	cout << "Start!\n";
+	
+	String s;
+	s.set("Hello!");
+	cout << "\"" << s.get() << "\"\n";
+	
+	String k("OK");
+	cout << "\"" << k.get() << "\"\n";
+	
+	String t = "World!";
+	cout << "\"" << t.get() << "\"\n";
+//	String r = 1425;
+
+	out("12345");
+	
+	t = "ABCDE"; // run time ERROR on exit
+	cout << "\"" << t.get() << "\"\n";
+					
+	cout << "Finish!\n";
+	return 0;
+}
