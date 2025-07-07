@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<link>
+    <meta charset="UTF-8">
+    <title>{% block title %}Default title{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <a class="logo" href="{% url 'homepage' %}">
+            <!-- <a > -->
+            <!-- <img src="/static/images/my_logo.svg" alt="Логотип" class="logo-image"> -->
+        </a>
+
+        </a>
+            <div class="navigate">
+                <ul>
+                    <li><a href="{% url 'homepage' %}">Главная</a></li>
+                    <li><a href="{% url 'article_list' %}">Статьи</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                </ul>
+            </div>
+    </div>
+
+{% block content %}-{% endblock content %}
+</body>
+</html>

@@ -1,11 +1,8 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Article {{id}}</title>
-    </head>
-    <body>
-        <h1>Article {{id}}</h1>
-    </body>
-    </html>
+{% extends "base_layout.html" %}
+{% block title %}-{{ article.title }}-{% endblock title %}
+{% block content %}
+<div class="article-detail">
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.body }}</p>
+</div>
+{% endblock content %}
