@@ -3,18 +3,21 @@ h1{
     text-align: center;
     padding: 20px;
 }
-p{
-    display: flex;
-    text-align:justify;
-    justify-content: space-evenly;
+
+.article-main p{
     text-decoration-color: bisque;
     font-family: 'Courier New', Courier, monospace;
     font-style: oblique;
+    display: flex;
+    text-align:justify;
+    justify-content: space-evenly;
     max-width: 700px;
-        padding-right: 30px;
+    padding-right: 30px;
     float: left; 
     margin-bottom: 10px;
 }
+
+
 body{
   display: grid;
   place-items: center;
@@ -52,14 +55,14 @@ a:hover{
     color: rgb(89, 109, 61);
     border: 1px;
 }
-.navbar {
+/* .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px;
     background-color: rgb(251, 244, 237);
     border-radius: 15px;
-}
+} */
 
 .logo {
     background-image:url(../images/my_logo.svg);
@@ -70,25 +73,64 @@ a:hover{
     width: 50px;
 
 }
-
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: rgb(251, 244, 237);
+    border-radius: 15px;
+    gap: 20px;
+}
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-li {
-  float: left;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 0; /* Убираем отступы между li, чтобы контролировать их внутри */
 }
 
-li a {
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем содержимое */
+    min-width: 120px; /* Фиксированная ширина для всех пунктов */
+    padding: 10px 0; /* Вертикальные отступы */
+    box-sizing: border-box; /* Учитываем padding в ширине */
+}
+
+li a, .log-button {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%; /* Растягиваем на всю ширину li */
+    text-align: center;
+    padding: 10px 15px; /* Одинаковые отступы для всех */
+    white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+.log-button {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+}
+li form {
+    float: left;
   display: block;
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 30px 14px 30px 15px;
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
+
 
 img {
     width: 300px;
@@ -96,5 +138,82 @@ img {
     object-fit: contain;
     position: relative;
     margin-top: 15px;
+
+}
+
+.form{
+  background: none;
+  width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form ul {
+    flex-direction: column;
+    align-content: center;
+}
+
+.form .helptext { /* Стили для списка подсказок */
+  padding: 0;
+  margin: 0 0 10px 0;
+  list-style-type: none;
+  font-size: 0.8em;
+  color: #666;
+  align-items: center;
+}
+
+.form ul.helptext li {
+  margin-bottom: 5px;
+  word-wrap: break-word; /* Перенос длинных слов */
+}
+
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="password"]{
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form .helptext li
+{
+  width: 300px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form .log-button {
+  color: black;
+  text-decoration: none; /* Убираем подчёркивание, если у других ссылок его нет */
+  background: none; /* Прозрачный фон, как у других */
+  border: none; /* Убираем границу */
+  padding: 0; /* Обнуляем отступы, если они мешают */
+  margin: 0; /* Убираем внешние отступы */
+  font-family: inherit; /* Наследуем шрифт */
+  font-size: inherit; /* Наследуем размер текста */
+  cursor: pointer; /* Курсор-указатель, как у ссылки */
+  display: inline; /* Делаем строчным, как ссылки в навигации */
 
 }

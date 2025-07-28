@@ -9,20 +9,30 @@
 <body>
     <div class="navbar">
         <a class="logo" href="{% url 'homepage' %}">
-            <!-- <a > -->
-            <!-- <img src="/static/images/my_logo.svg" alt="Логотип" class="logo-image"> -->
         </a>
-
-        </a>
-            <div class="navigate">
-                <ul>
-                    <li><a href="{% url 'homepage' %}">Главная</a></li>
-                    <li><a href="{% url 'article_list' %}">Статьи</a></li>
-                    <li><a href="{% url 'about' %}">О нас</a></li>
-                </ul>
-            </div>
+        <div class="navigate">
+            <ul>
+                <li><a href="{% url 'homepage' %}">Главная</a></li>
+                <li><a href="{% url 'article_list' %}">Статьи</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+            {% if user.is_authenticated %}
+            <li>
+                <form  action="/accounts/logout/" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="log-button">Log Out</button>
+                </form>
+            </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'login' %}">Log In</a>
+                </li>
+                 <li>
+                    <a href="{% url 'signup' %}">Sign Up</a>
+                </li>
+            {% endif %}
+        </ul>
+        </div>
     </div>
-
 {% block content %}-{% endblock content %}
 </body>
 </html>
