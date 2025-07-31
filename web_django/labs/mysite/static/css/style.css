@@ -217,3 +217,21 @@ img {
   display: inline; /* Делаем строчным, как ссылки в навигации */
 
 }
+.create_wrapper{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+ .create-button {
+  background-color: #639f66;
+  color: white;
+  padding: 10px 15px 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+   font-family: inherit; /* Наследуем шрифт */
+  font-size: inherit;
+}

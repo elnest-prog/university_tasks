@@ -13,21 +13,21 @@
         <div class="navigate">
             <ul>
                 <li><a href="{% url 'homepage' %}">Главная</a></li>
-                <li><a href="{% url 'article_list' %}">Статьи</a></li>
+                <li><a href="{% url 'articles:article_list' %}">Статьи</a></li>
                 <li><a href="{% url 'about' %}">О нас</a></li>
             {% if user.is_authenticated %}
             <li>
-                <form  action="/accounts/logout/" method="post">
+                <form  action="{% url 'accounts:logout' %} " method="post">
                     {% csrf_token %}
                     <button type="submit" class="log-button">Log Out</button>
                 </form>
             </li>
-            {% else %}
+            {% else %}      
                 <li>
-                    <a href="{% url 'login' %}">Log In</a>
+                    <a href="{% url 'accounts:login' %}">Log In</a>
                 </li>
                  <li>
-                    <a href="{% url 'signup' %}">Sign Up</a>
+                    <a href="{% url 'accounts:signup' %}">Sign Up</a>
                 </li>
             {% endif %}
         </ul>
