@@ -24,6 +24,7 @@
     <div class="create_wrapper">
          {% if user.is_authenticated %}
             <form  action="{% url 'articles:create' %} " method="get">
+            {% csrf_token %}
                 <button type="submit" class="create-button">Create article</button>
         {% endif %}     
     </div>

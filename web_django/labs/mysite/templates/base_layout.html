@@ -13,7 +13,7 @@
         <div class="navigate">
             <ul>
                 <li><a href="{% url 'homepage' %}">Главная</a></li>
-                <li><a href="{% url 'articles:article_list' %}">Статьи</a></li>
+                <li><a href="{% url 'homepage' %}">Статьи</a></li>
                 <li><a href="{% url 'about' %}">О нас</a></li>
             {% if user.is_authenticated %}
             <li>
