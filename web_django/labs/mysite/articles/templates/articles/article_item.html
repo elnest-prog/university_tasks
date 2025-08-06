@@ -3,10 +3,22 @@
 {% block content %}
 <div class="article-detail">
     <h1>{{ article.title }}</h1>
-    <div class="article-main">
-        <p>{{ article.body }}</p>
-            <img src="{{ article.thumbnail.url }}" alt="">
-    </div>
+    <p>{{ article.body }}</p>
+    <div class="img" style="background-image: url('{{ article.thumbnail.url }}')">
 
+    </div>
+    <!-- <img src="{{ article.thumbnail.url }}" alt=""> -->
+    {% if user.is_authenticated and user.id == article.author.id %}
+        <div>
+            <a class="btn btn-warning"
+                href="{% url 'articles:update' slug=article.slug%}">
+                Update
+            </a>
+            <a class="btn btn-danger"
+                href="{% url 'articles:delete' slug=article.slug%}">
+                Delete
+            </a>
+        </div>
+    {% endif %}
 </div>
 {% endblock content %}

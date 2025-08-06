@@ -23,11 +23,11 @@
                 </form>
             </li>
             {% else %}      
-                <li>
-                    <a href="{% url 'accounts:login' %}">Log In</a>
+                <li class="navbar-item ms-auto">
+                    <a class="btn btn-outline-primary" href="{% url 'accounts:login' %}">Log In</a>
                 </li>
-                 <li>
-                    <a href="{% url 'accounts:signup' %}">Sign Up</a>
+                 <li class="navbar-item ms-3">
+                    <a class="btn btn-primary" href="{% url 'accounts:signup' %}">Sign Up</a>
                 </li>
             {% endif %}
         </ul>

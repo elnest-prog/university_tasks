@@ -13,7 +13,6 @@ h1{
     justify-content: space-evenly;
     max-width: 700px;
     padding-right: 30px;
-    float: left; 
     margin-bottom: 10px;
 }
 
@@ -21,6 +20,22 @@ h1{
 body{
   display: grid;
   place-items: center;
+}
+.article-detail{
+  position: relative;
+  display: flexbox;
+  p{
+    float: left;
+    text-decoration-color: bisque;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: oblique;
+    display: flex;
+    text-align:justify;
+    justify-content: space-evenly;
+    max-width: 700px;
+    padding-right: 30px;
+    margin-bottom: 10px;
+  }
 }
 .articles{
     display: flex;
@@ -55,14 +70,7 @@ a:hover{
     color: rgb(89, 109, 61);
     border: 1px;
 }
-/* .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: rgb(251, 244, 237);
-    border-radius: 15px;
-} */
+
 
 .logo {
     background-image:url(../images/my_logo.svg);
@@ -88,16 +96,16 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    gap: 0; /* Убираем отступы между li, чтобы контролировать их внутри */
+    gap: 0;
 }
 
 li {
     display: flex;
     align-items: center;
-    justify-content: center; /* Центрируем содержимое */
-    min-width: 120px; /* Фиксированная ширина для всех пунктов */
-    padding: 10px 0; /* Вертикальные отступы */
-    box-sizing: border-box; /* Учитываем padding в ширине */
+    justify-content: center;
+    min-width: 120px;
+    padding: 10px 0;
+    box-sizing: border-box;
 }
 
 li a, .log-button {
@@ -108,10 +116,10 @@ li a, .log-button {
     cursor: pointer;
     font-family: inherit;
     font-size: inherit;
-    width: 100%; /* Растягиваем на всю ширину li */
+    width: 100%;
     text-align: center;
-    padding: 10px 15px; /* Одинаковые отступы для всех */
-    white-space: nowrap; /* Запрещаем перенос текста */
+    padding: 10px 15px; 
+    white-space: nowrap;
 }
 
 .log-button {
@@ -132,13 +140,15 @@ li form {
 }
 
 
-img {
-    width: 300px;
-    height: 300px;
-    object-fit: contain;
-    position: relative;
-    margin-top: 15px;
-
+.img {
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover  ;
+  position: relative;
+  margin-top: 15px;
+  float: right;
 }
 
 .form{
@@ -152,11 +162,11 @@ img {
 }
 
 .form ul {
-    flex-direction: column;
-    align-content: center;
+  flex-direction: column;
+  align-content: center;
 }
 
-.form .helptext { /* Стили для списка подсказок */
+.form .helptext {
   padding: 0;
   margin: 0 0 10px 0;
   list-style-type: none;
@@ -167,7 +177,7 @@ img {
 
 .form ul.helptext li {
   margin-bottom: 5px;
-  word-wrap: break-word; /* Перенос длинных слов */
+  word-wrap: break-word; 
 }
 
 
@@ -206,15 +216,15 @@ img {
 
 .form .log-button {
   color: black;
-  text-decoration: none; /* Убираем подчёркивание, если у других ссылок его нет */
-  background: none; /* Прозрачный фон, как у других */
-  border: none; /* Убираем границу */
-  padding: 0; /* Обнуляем отступы, если они мешают */
-  margin: 0; /* Убираем внешние отступы */
-  font-family: inherit; /* Наследуем шрифт */
-  font-size: inherit; /* Наследуем размер текста */
-  cursor: pointer; /* Курсор-указатель, как у ссылки */
-  display: inline; /* Делаем строчным, как ссылки в навигации */
+  text-decoration: none; 
+  background: none; 
+  border: none;
+  padding: 0; 
+  margin: 0; 
+  font-family: inherit; 
+  font-size: inherit; 
+  cursor: pointer; 
+  display: inline; 
 
 }
 .create_wrapper{
@@ -232,6 +242,99 @@ img {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
-   font-family: inherit; /* Наследуем шрифт */
+   font-family: inherit;
   font-size: inherit;
+}
+
+input[type="file" i]{
+  padding: 10px 10px 15px 0px;
+}
+.btn-secondary{
+  text-align: center;
+  margin-top: 10px;
+  background-color: #9f6963;
+  color: white;
+  padding: 10px 15px 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 308 px;
+  font-family: inherit; 
+  font-size: inherit;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 15px 10px;
+  }
+  
+  .article-detail {
+    flex-direction: column;
+  }
+  
+  .article-detail p {
+    padding: 0;
+    font-size: 0.95rem;
+  }
+  
+  .img {
+    height: 200px;
+    float: none;
+    margin: 10px auto;
+  }
+  
+  .navbar {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  li {
+    width: 100%;
+    padding: 5px 0;
+  }
+  
+  .articles {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .article__item {
+    width: 90%;
+    margin: 10px 0;
+  }
+  
+  .form {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  .btn-secondary, .create-button {
+    width: 100%;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+  
+  .img {
+    height: 150px;
+  }
+  
+  li a, .log-button {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .article__item p {
+    width: 100%;
+  }
 }
