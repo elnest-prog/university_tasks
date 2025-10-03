@@ -1,0 +1,48 @@
+/* Стили для как это работает */
+
+.how{
+
+    h2{
+        text-align: center;
+        margin-bottom: 54px;
+        font-size: 32px;
+        font-weight: 700;
+        color: #3F3A51;
+    }
+
+    h3{
+        text-align: center;
+        margin-bottom: 24px;
+        font-size: 20px;
+        font-weight: 500;
+        color: #3F3A51;
+    }
+
+    p{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        color: #3F3A51;
+    }
+}
+.how__cards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+
+    div{
+        width: 345px;
+        height: 368px;
+    }
+    img{
+        margin-bottom: 24px;
+    }
+}
+
+
+/* Конец стилей для как это работает */

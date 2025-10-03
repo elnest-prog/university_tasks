@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* Стили для отзывов */
+.reviews {
+  width: 100%;
+  height: 415px;
+  background-color: #DFE1FF;
+  background-size: auto;
+  background-repeat: no-repeat;
+  margin-bottom: 65px;
+}
+.reviews h2 {
+  padding-top: 104px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #3F3A51;
+  width: 390px;
+}
+
+.reviews__wrap {
+  display: flex;
+}
+
+.reviews__easy {
+  display: inline;
+  flex-wrap: wrap;
+  float: left;
+}
+
+.reviews__teacher {
+  width: 629px;
+  background-color: #FFFFFF;
+  border-radius: 35px;
+  margin-top: 80px;
+}
+
+.reviews__teacher-maintext {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.reviews__teacher-info img {
+  padding-top: 18px;
+  padding-left: 30px;
+  float: left;
+  padding-right: 16px;
+  margin-bottom: 30px;
+}
+.reviews__teacher-info p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.reviews__teacher-name {
+  padding-top: 27px;
+  color: #000000;
+}
+
+.reviews__teacher-job {
+  color: #8F99AC;
+}
+
+.reviews__easy p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3F3A51;
+  margin-bottom: 14px;
+}
+
+.reviews button {
+  background-color: #4047E2;
+  border-radius: 10px;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #F9F9F9;
+}
+
+/* Конец стилей для отзывов *//*# sourceMappingURL=reviews.css.map */

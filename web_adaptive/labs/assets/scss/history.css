@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* Стили для history */
+.history {
+  margin-bottom: 80px;
+}
+.history h2 {
+  padding-top: 90px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #3F3A51;
+  padding-left: 40px;
+}
+.history p {
+  padding-top: 30px;
+  font-size: 18px;
+  font-weight: 400;
+  padding-left: 40px;
+}
+.history img {
+  float: right;
+  padding-left: 0;
+  margin-right: 25px;
+}
+
+/* Конец стилей для history *//*# sourceMappingURL=history.css.map */

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/* Стили для промо */
+.promo {
+  margin-bottom: 80px;
+}
+.promo h1 {
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-top: 56px;
+}
+.promo .img {
+  margin-left: 40px;
+  float: right;
+}
+.promo p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #8F99AC;
+  margin-bottom: 19px;
+}
+
+.promo__buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.promo__button-lesson {
+  background-color: #4047E2;
+  border-radius: 10px;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #F9F9F9;
+  margin-right: 20px;
+}
+
+.promo__button-demo {
+  width: 225px;
+  height: 50px;
+  border: 1px solid #4047E2;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4047E2;
+}
+.promo__button-demo img {
+  margin-right: 10px;
+}
+
+/* Конец стилей для промо *//*# sourceMappingURL=promo.css.map */

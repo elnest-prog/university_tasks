@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* Сброс стилей */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, p, h1, h2, h3, h4, h5, button {
+  margin: 0;
+}
+body ul, p ul, h1 ul, h2 ul, h3 ul, h4 ul, h5 ul, button ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Сброс стилей закончен */
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}/*# sourceMappingURL=base.css.map */

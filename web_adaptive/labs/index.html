@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>EduКеша</title>
+</head>
+<body>
+<header>
+    <nav class="navigation">
+        <div class="container">
+            <div class="navigation__wrap">
+                <div class="navigation__decor">
+                    <img src="./public/logo.svg" alt="" class="navigation__decor-logo">
+                    <a href="/" class="navigation__decor-name"><span class="navigation__decor-name-part1">Edu</span>
+                        <span class="navigation__decor-name-part2">Кеша</span></a>
+                </div>
+                <ul class="navigation__list">
+                    <li class="navigation__list-item">
+                        <a href="#possibilities__id" class="navigation__list-item-link">Возможности</a>
+                    </li>
+                    <li class="navigation__list-item">
+                        <a href="#how_working__id" class="navigation__list-item-link">Как это работает?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="promo">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <h1>Сервис для проведения онлайн-занятий</h1>
+                    <p>Проводите видеоуроки для всего<br>класса, как будто вы в школе</p>
+                    <button class="promo__button-lesson">
+                        Провести урок
+                    </button>
+                      <button class="promo__button-demo">
+                        <img src="/public/demo.svg" alt="">
+                            Посмотреть демо
+                    </button>
+                </div>
+                <div class="col-7">
+                    <img src="./public/promo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>  
+</header>
+<main>
+    <div class="class">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <h2>Проводите видеоуроки с целым<br>классом</h2>
+                    <p>Добавьте учеников в класс, 
+                        запланируйте урок и отправьте им<br>ссылку. 
+                        Они смогут заниматься с ноутбука, планшета или<br>мобильного телефона.
+                        <br><br>
+                        Урок на платформе легко вместит целый класс, 
+                        а качество<br>видеосвязи при этом не ухудшится.</p>
+                </div>
+                <div class="col-5">
+                    <img src="/public/class.png" alt="">
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="history">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img src="/public/history.png" alt="">
+                </div>
+                <div class="col-6">
+                    <h2>Просматривайте историю занятий</h2>
+                    <p>
+                        Записывайте занятия и возвращайтесь к ним когда угодно. 
+                        <br><br>
+                        Ученики всегда могут вернуться к прошлым урокам
+                         и повторить изученный материал.
+                    </p>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="possibilities" id="possibilities__id">
+        <div class="container">
+            <div class="row">
+                <div class="possibilities__title">
+                    <h2>Возможности</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="possibilities__cards">
+                        <div class="possibilities__cards-chat col-3">
+                            <img src="/public/pos_chat.svg" alt="">
+                            <h3>Общение с классом</h3>
+                            <p>Видеосвязь
+                                <br>
+                                Чат с классом</p>
+                        </div>
+                        <div class="possibilities__cards-lessons  col-3">
+                            <img src="/public/pos_lessons.svg" alt="">
+                            <h3>Проведение занятий</h3>
+                            <p>Презентация файлов
+                                <br>
+                                Демонстрация экрана</p>
+                        </div>
+                        <div class="possibilities__cards-checkin  col-3">
+                            <img src="/public/pos_checkin.svg" alt="">
+                            <h3>Посещаемость</h3>
+                            <p>Автоматическое<br>
+                                отслеживание<br>
+                                присутствующих</p>
+                        </div>
+                        <div class="possibilities__cards-history  col-3">
+                            <img src="/public/pos_history.svg" alt="">
+                            <h3>История занятий</h3>
+                            <p>Материалы урока</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="how" id="how_working__id">
+        <div class="container">
+             <div class="row">
+                <div class="how__title">
+                    <h2>Как это работает?</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="how__cards col-12">
+                    <div class="how__schedule col-4">
+                        <img src="/public/schedule.png" alt="">
+                        <h3>Составьте расписание</h3>
+                        <p>Выберите время, предмет и класс.
+                            <br>
+                            Ученики получат уведомление о
+                            <br>
+                            предстоящем уроке.</p>
+                    </div>
+                     <div class="how__material col-4">
+                        <img src="/public/material.png" alt="">
+                        <h3>Подготовьте материал</h3>
+                        <p>Загружайте необходимые материалы<br>к уроку.</p>
+                    </div>
+                     <div class="how__wstudent col-4">
+                        <img src="/public/wstudents.png" alt="">
+                        <h3>Начните урок с учениками</h3>
+                        <p>Задавайте вопросы и вызывайте<br>«к доске» детей с поднятой рукой.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews">
+        <div class="container">
+            <div class="reviews__wrap row">
+                <div class="reviews__easy col-5">
+                    <h2>Дистанционные уроки<br>
+                        проще простого</h2>
+                    <p>Составьте расписание для своего класса<br>
+                        и проведите первое удалённое занятие</p>
+                    <button>Провести урок</button>
+                </div>
+                <div class="reviews__teacher col-7">
+                    <p class="reviews__teacher-maintext">Я провожу уроки английского в «Виртуальном классе».<br>
+                        Это помогло мне безболезненно перевести учеников на<br>
+                        дистанционное обучение, не прерывая<br>                            образовательный процесс.</p>
+                    <div class="reviews__teacher-info">
+                        <img src="/public/reviews.png" alt="">
+                        <p class="reviews__teacher-name">Иван Иванов</p>
+                        <p class="reviews__teacher-job">Учитель математики</p>
+                    </div>  
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer__decor col-12">
+                    <div class="footer__decor-logotip">
+                    <img src="./public/logo.svg" alt="" class="footer__decor-logo">
+                        <a href="/" class="footer"><span class="navigation__decor-name-part1">Edu</span>
+                            <span class="navigation__decor-name-part2">Кеша</span></a>
+                    </div>
+                    <img src="/public/footer__fond.png" alt="" class="footer__decor-fond">
+                </div>
+                <div class="footer__separator"></div>
+            </div>
+            <div class="footer__data">
+                <div class="footer__data-address">
+                    <p>г Сургут, ул Базовая, д. 34, офис 10</p>
+                    <p>ОГРН 1238600001200</p>
+                    <p>ИНН 8602309464</p>
+                </div>
+                <div class="footer__data-copyright">
+                    <p>ООО Дотсолюшн © 2023</p>
+                </div>
+            </div>   
+        </div>
+    </div>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+</body>
+</html>
