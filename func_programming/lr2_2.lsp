@@ -1,0 +1,6 @@
+(defun sorting (arglist)
+    (cond ((and (< (first arglist) (second arglist)) (< (second arglist) (third arglist))) (list (third arglist) (second arglist) (first arglist)))
+    ( (and (> (first arglist) (second arglist)) (> (second arglist) (third arglist))) (list (third arglist) (second arglist) (first arglist)))
+    (t (list (first arglist) (second arglist) (third arglist)))
+))
+(print (sorting '(8 2 10)))
