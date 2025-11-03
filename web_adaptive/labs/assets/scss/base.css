@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* Сброс стилей */
+/* Сброс стилей! */
 *,
 *::before,
 *::after {
@@ -32,4 +32,8 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: 18px;
   line-height: 1.5;
+}
+
+.open {
+  display: flex !important;
 }/*# sourceMappingURL=base.css.map */
