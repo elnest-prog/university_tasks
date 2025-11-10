@@ -38,7 +38,7 @@ polynomial *get_derivative(polynomial *poly);
 
 double binary_search(polynomial *poly, double left_border, double right_border);
 
-double *get_result(polynomial *poly, double left_border, double right_border);
+double *get_result(polynomial *poly, double left_border, double right_border, int *counter);
 
 void copy_polynomial(polynomial *poly_src, polynomial *poly_dest);
 
@@ -58,7 +58,7 @@ void print_menu()
 int main()
 {
     int counted_answers = 0;
-    double *answer = NULL;
+    // double *answer = NULL;
     int program_mode = 0;
     interval find_in;
     polynomial equation;
@@ -115,18 +115,19 @@ int main()
                 printf("%lfx^%d\n", equation.nomos[i].coefficient, equation.nomos[i].power);
             }
 
-            counted_answers = calculate_result(&answer, &equation, &find_in);
+            // counted_answers = calculate_result(&answer, &equation, &find_in);
 
-            for (i = 0; i < counted_answers; i++)
-            {
-                printf("%lf ", answer[i]);
-            }
+            // for (i = 0; i < counted_answers; i++)
+            // {
+            //     printf("%lf ", answer[i]);
+            // }
 
-            // printf("%lf\n", get_y(&equation, 1));
-            printf("\nNOT HERE\n");
-            printf("\n\n%lf - result of binary search\n", binary_search(&equation,find_in.left_border, find_in.right_border));
-            printf("\nMAYBE HERE\n");
-            
+            // // printf("%lf\n", get_y(&equation, 1));
+            // printf("\nNOT HERE\n");
+            // printf("\n\n%lf - result of binary search\n", binary_search(&equation,find_in.left_border, find_in.right_border));
+            // printf("\nMAYBE HERE\n");
+            printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
+
             break;
         }
 
@@ -425,7 +426,35 @@ double binary_search(polynomial *poly, double left_border, double right_border)
     return ((left_border + right_border)/2);
 }
 
-double *get_result(polynomial *poly, double left_border, double right_border)
+double *get_result(polynomial *poly, double left_border, double right_border, int *counter)
 {
-    
+    double *result = malloc(poly->max_power*sizeof(double));
+    *counter = 0;
+    if (poly->nomos->power == 1)
+    {
+        if ((poly->counted_nomos == 2) && (poly->nomos[1].coefficient != 0))
+        {
+            *result = ((poly->nomos[1].coefficient)*(-1)) / poly->nomos[0].coefficient;
+
+            if (!(*result >= left_border && *result <= right_border))
+            {
+                free(result);
+                result = NULL;
+            }
+            else
+            {
+                *counter += 1; 
+            }
+        }
+        else
+        {
+            *result = 0;
+
+            if (*result >= left_border && *result <= right_border)
+            {
+                *counter += 1;
+            }
+        }
+    }
+    return result;
 }
