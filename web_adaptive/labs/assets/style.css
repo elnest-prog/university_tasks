@@ -536,6 +536,7 @@ body {
     justify-content: center; /*Центрирование по горизонтали*/
     align-items: center;
     height: auto;
+    margin-right: 0%;
   }
 }
 @media screen and (max-width: 992px) {
@@ -551,6 +552,7 @@ body {
 /* Конец стилей для history */
 /* Стили для возможностей */
 .possibilities {
+  overflow: hidden;
   margin-bottom: 67px;
 }
 .possibilities h2 {
@@ -725,7 +727,7 @@ body {
   margin-bottom: 80px;
 }
 .how__cards div {
-  width: 345px;
+  width: auto;
   height: 368px;
 }
 .how__cards img {
@@ -861,7 +863,6 @@ body {
     padding-left: 10px;
   }
   .reviews__teacher-info p {
-    width: 100%;
     text-align: center;
     padding-top: 0px;
     padding-bottom: 5px;
@@ -889,6 +890,7 @@ body {
 }
 
 .reviews__teacher-job {
+  margin: auto;
   color: #8F99AC;
 }
 
@@ -916,6 +918,12 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 565px) {
+  .footer__decor {
+    flex-direction: column;
+    gap: 35px;
+  }
+}
 
 .footer__separator {
   margin-top: 43px;
@@ -934,6 +942,14 @@ body {
   font-size: 16px;
   font-weight: 400;
   color: #8F99AC;
+}
+@media screen and (max-width: 565px) {
+  .footer__data {
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* Конец стилей для футера *//*# sourceMappingURL=style.css.map */

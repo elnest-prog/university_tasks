@@ -1,5 +1,6 @@
 /* Стили для возможностей */
 .possibilities{
+    overflow: hidden;
     margin-bottom: 67px;
     h2{
         text-align: center;
@@ -22,7 +23,7 @@
     }
     .swiper{
         .swiper-wrapper {
-padding-top: 30px;
+            padding-top: 30px;
             display: flex;
             padding-bottom: 50px;
         }

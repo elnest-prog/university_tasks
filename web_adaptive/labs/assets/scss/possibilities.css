@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Стили для возможностей */
 .possibilities {
+  overflow: hidden;
   margin-bottom: 67px;
 }
 .possibilities h2 {

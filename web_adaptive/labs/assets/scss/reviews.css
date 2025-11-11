@@ -119,7 +119,6 @@
     padding-left: 10px;
   }
   .reviews__teacher-info p {
-    width: 100%;
     text-align: center;
     padding-top: 0px;
     padding-bottom: 5px;
@@ -147,6 +146,7 @@
 }
 
 .reviews__teacher-job {
+  margin: auto;
   color: #8F99AC;
 }
 

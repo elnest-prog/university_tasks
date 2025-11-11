@@ -43,7 +43,7 @@
   margin-bottom: 80px;
 }
 .how__cards div {
-  width: 345px;
+  width: auto;
   height: 368px;
 }
 .how__cards img {

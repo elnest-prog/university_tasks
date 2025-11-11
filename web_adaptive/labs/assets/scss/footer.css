@@ -5,6 +5,12 @@
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 565px) {
+  .footer__decor {
+    flex-direction: column;
+    gap: 35px;
+  }
+}
 
 .footer__separator {
   margin-top: 43px;
@@ -23,6 +29,14 @@
   font-size: 16px;
   font-weight: 400;
   color: #8F99AC;
+}
+@media screen and (max-width: 565px) {
+  .footer__data {
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* Конец стилей для футера *//*# sourceMappingURL=footer.css.map */
