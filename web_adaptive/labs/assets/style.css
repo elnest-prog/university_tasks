@@ -758,15 +758,45 @@ body {
   color: #3F3A51;
   width: 390px;
 }
+@media screen and (max-width: 1200px) {
+  .reviews h2 {
+    font-size: 27px;
+    width: auto;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .reviews {
+    height: auto;
+  }
+}
 
 .reviews__wrap {
   display: flex;
+  flex-wrap: nowrap;
+}
+@media screen and (max-width: 1023px) {
+  .reviews__wrap {
+    flex-direction: column;
+    height: 140vh;
+  }
 }
 
 .reviews__easy {
   display: inline;
   flex-wrap: wrap;
   float: left;
+}
+@media screen and (max-width: 1023px) {
+  .reviews__easy {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 780px) {
+  .reviews__easy {
+    text-align: left;
+  }
 }
 
 .reviews__teacher {
@@ -775,6 +805,25 @@ body {
   border-radius: 35px;
   margin-top: 80px;
 }
+@media screen and (max-width: 1200px) {
+  .reviews__teacher {
+    width: auto;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .reviews__teacher {
+    float: none;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 780px) {
+  .reviews__teacher {
+    text-align: left;
+    padding-left: 0px;
+  }
+}
 
 .reviews__teacher-maintext {
   font-size: 20px;
@@ -782,6 +831,11 @@ body {
   color: #000000;
   padding-left: 30px;
   padding-top: 30px;
+}
+@media screen and (max-width: 1200px) {
+  .reviews__teacher-maintext {
+    padding-left: 15px;
+  }
 }
 
 .reviews__teacher-info img {
@@ -794,6 +848,39 @@ body {
 .reviews__teacher-info p {
   font-size: 16px;
   font-weight: 400;
+}
+@media screen and (max-width: 1023px) {
+  .reviews__teacher-info {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+  .reviews__teacher-info img {
+    float: none;
+    margin: 0 auto 10px;
+    padding-left: 10px;
+  }
+  .reviews__teacher-info p {
+    width: 100%;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 5px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .reviews__teacher-info .reviews__teacher-name {
+    text-align: left;
+    margin-left: 85px;
+    padding-top: 18px;
+    width: auto;
+  }
+  .reviews__teacher-info .reviews__teacher-job {
+    text-align: left;
+    margin-left: 85px;
+  }
+  .reviews__teacher-info img {
+    float: left;
+  }
 }
 
 .reviews__teacher-name {

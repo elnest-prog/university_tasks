@@ -15,17 +15,42 @@
         color: #3F3A51;
         width: 390px;
     }
+    @media screen and (max-width: 1200px){
+        h2{
+            font-size: 27px;
+            width: auto;
+        }
+    }
 
+        
+    @media screen and (max-width: 1023px){
+        height: auto;
+    }
 }
 
 .reviews__wrap{
     display: flex;
+    flex-wrap: nowrap;
+    @media screen and (max-width: 1023px){
+       flex-direction: column;
+       height: 140vh;
+    }
 }
 
 .reviews__easy{
     display: inline;
     flex-wrap: wrap;
     float: left;
+    
+    @media screen and (max-width: 1023px){
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    @media screen and (max-width: 780px) {
+        text-align: left;
+    }
 }
 
 .reviews__teacher{
@@ -33,6 +58,21 @@
     background-color: #FFFFFF;
     border-radius: 35px;
     margin-top: 80px;
+    
+    @media screen and (max-width: 1200px){
+        width: auto;
+    }
+     @media screen and (max-width: 1023px){
+        float: none;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 780px) {
+        text-align: left;
+        padding-left: 0px;
+    }
 }
 
 .reviews__teacher-maintext{
@@ -41,22 +81,60 @@
     color: #000000;
     padding-left: 30px;
     padding-top: 30px;
+    @media screen and (max-width: 1200px){
+       padding-left: 15px;
+    }
+
 }
 
 .reviews__teacher-info
 {
-
-
     img{
     padding-top: 18px;
     padding-left: 30px;
     float: left;
     padding-right: 16px;
     margin-bottom: 30px;
+    
     }
     p{
         font-size: 16px;
         font-weight: 400;
+    }
+
+    @media screen and (max-width: 1023px){
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+        
+        img {
+            float: none;
+            margin: 0 auto 10px;
+            padding-left: 10px;
+        }
+        
+        p{
+            width: 100%;
+            text-align: center;
+            padding-top: 0px;
+            padding-bottom: 5px;
+        }
+    }
+
+    @media screen and (max-width: 780px) {
+        .reviews__teacher-name{
+            text-align: left;
+            margin-left: 85px;
+            padding-top: 18px;
+            width: auto;
+        }
+        .reviews__teacher-job{
+            text-align: left;
+            margin-left: 85px;            
+        }
+        img{
+            float: left;
+        }
     }
 }
 
