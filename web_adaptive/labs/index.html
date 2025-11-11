@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <title>EduКеша</title>
 </head>
 <body>
@@ -57,19 +61,22 @@
     <div class="promo">
         <div class="container">
             <div class="row">
-                <div class="col-5">
+                <div class="col-12 col-lg-5">
                     <h1>Сервис для проведения онлайн-занятий</h1>
                     <p>Проводите видеоуроки для всего<br>класса, как будто вы в школе</p>
-                    <button class="promo__button-lesson">
-                        Провести урок
-                    </button>
-                      <button class="promo__button-demo">
-                        <img src="/public/demo.svg" alt="">
-                            Посмотреть демо
-                    </button>
+                    <div class="col-lg-12 promo__buttons">
+                        <button class="promo__button-lesson">
+                            Провести урок
+                        </button>
+                        <button class="promo__button-demo">
+                            <img src="/public/demo.svg" alt="">
+                                Посмотреть демо
+                        </button>
+                    </div>
                 </div>
-                <div class="col-7">
-                    <img src="./public/promo.png" alt="">
+                <div class="col-12 col-lg-7">
+                    <img src="./public/promo.png" alt="" class="promo__pic-full">
+                    <img src="./public/promo_mobile.svg" alt="" class="promo__pic-mobile">
                 </div>
             </div>
         </div>
@@ -79,7 +86,7 @@
     <div class="class">
         <div class="container">
             <div class="row">
-                <div class="col-7">
+                <div class="col-12 col-lg-7">
                     <h2>Проводите видеоуроки с целым<br>классом</h2>
                     <p>Добавьте учеников в класс, 
                         запланируйте урок и отправьте им<br>ссылку. 
@@ -88,7 +95,7 @@
                         Урок на платформе легко вместит целый класс, 
                         а качество<br>видеосвязи при этом не ухудшится.</p>
                 </div>
-                <div class="col-5">
+                <div class="col-12 col-lg-5">
                     <img src="/public/class.png" alt="">
                 </div>  
             </div>
@@ -97,10 +104,10 @@
     <div class="history">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
                     <img src="/public/history.png" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-lg-6 order-1 order-lg-2">
                     <h2>Просматривайте историю занятий</h2>
                     <p>
                         Записывайте занятия и возвращайтесь к ним когда угодно. 
@@ -119,36 +126,66 @@
                     <h2>Возможности</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="possibilities__cards">
-                        <div class="possibilities__cards-chat col-3">
-                            <img src="/public/pos_chat.svg" alt="">
-                            <h3>Общение с классом</h3>
-                            <p>Видеосвязь
-                                <br>
-                                Чат с классом</p>
+            <div class="swiper thisSwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="possibilities__card-chat">
+                                <div class="possibilities__cards-chat-img">
+                                    <img src="public/pos_chat.svg">
+                                </div>
+                                <h3>Общение с классом</h3>
+                                <div class="possibilities__cards-chat-text">
+                                    <p>Видеосвязь</p>
+                                    <p>Чат с классом</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="possibilities__cards-lessons  col-3">
-                            <img src="/public/pos_lessons.svg" alt="">
-                            <h3>Проведение занятий</h3>
-                            <p>Презентация файлов
-                                <br>
-                                Демонстрация экрана</p>
+
+                        <div class="swiper-slide">
+                            <div class="possibilities__card-lessons">
+                                <div class="possibilities__cards-lessons-img">
+                                    <img src="public/pos_lessons.svg">
+                                </div>
+                                <h3>
+                                    Проведение занятий
+                                </h3>
+                                <div class="possibilities__card-lessons-text">
+                                    <p>Презентация файлов</p>
+                                    <p>Демонстрация экрана</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="possibilities__cards-checkin  col-3">
-                            <img src="/public/pos_checkin.svg" alt="">
-                            <h3>Посещаемость</h3>
-                            <p>Автоматическое<br>
-                                отслеживание<br>
-                                присутствующих</p>
+
+                        <div class="swiper-slide">
+                            <div class="possibilities__card-checkin">
+                                <div class="possibilities__cards-checkin-img">
+                                    <img src="public/pos_checkin.svg">
+                                </div>
+                                <h3>
+                                    Посещаемость
+                                </h3>
+                                <div class="possibilities__card-checkin-text">
+                                    <p>Автоматическое отслеживание присутствующих</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="possibilities__cards-history  col-3">
-                            <img src="/public/pos_history.svg" alt="">
-                            <h3>История занятий</h3>
-                            <p>Материалы урока</p>
+
+                        <div class="swiper-slide">
+                            <div class="possibilities__card-history">
+                                <div class="possibilities__cards-history-img">
+                                    <img src="public/pos_history.svg">
+                                </div>
+                                <h3>
+                                    История занятий
+                                </h3>
+                                <div class="possibilities__card-history-text">
+                                    <p>Материалы урока</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -248,5 +285,6 @@
         document.querySelector('.navigation__menu-refs').classList.toggle('navigation__menu-refs-true');
     })
 </script>
+<script src="swiper.js"></script>
 </body>
 </html>

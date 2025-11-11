@@ -21,35 +21,113 @@
   font-weight: 400;
   color: #3F3A51;
 }
+.possibilities .swiper .swiper-wrapper {
+  padding-top: 30px;
+  display: flex;
+  padding-bottom: 50px;
+}
 
-.possibilities__cards {
+.possibilities__card-chat, .possibilities__card-checkin {
+  background-color: rgba(64, 71, 226, 0.2);
+  margin: auto;
+  height: 340px;
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-top;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0px 10px 50px 0px rgba(64, 71, 226, 0.2);
+}
+@media screen and (max-width: 991px) {
+  .possibilities__card-chat, .possibilities__card-checkin {
+    padding: 30px 20px;
+    gap: 15px;
+    height: 250px;
+  }
+  .possibilities__card-chat h3, .possibilities__card-checkin h3 {
+    font-size: 16px;
+  }
+  .possibilities__card-chat p, .possibilities__card-checkin p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .possibilities__card-chat, .possibilities__card-checkin {
+    gap: 15px;
+    width: 240px;
+  }
+}
+.possibilities__card-chat .possibility_card_bl-rectangle, .possibilities__card-checkin .possibility_card_bl-rectangle {
+  background: #4047E2;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  padding: 30px 10px;
+}
+@media screen and (max-width: 991px) {
+  .possibilities__card-chat .possibility_card_bl-rectangle, .possibilities__card-checkin .possibility_card_bl-rectangle {
+    height: 70px;
+    width: 70px;
+    padding: 20px 9px;
+  }
+  .possibilities__card-chat .possibility_card_bl-rectangle img, .possibilities__card-checkin .possibility_card_bl-rectangle img {
+    width: 70%;
+  }
+}
+
+.possibilities__card-lessons, .possibilities__card-history {
+  background-color: rgba(252, 162, 6, 0.2);
+  margin: auto;
+  height: 340px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
   align-items: center;
   text-align: center;
+  border-radius: 15px;
+  padding: 50px 20px;
+  box-shadow: 0px 10px 50px 0px rgba(252, 162, 6, 0.2);
 }
-.possibilities__cards img {
-  margin-bottom: 26px;
-  padding-top: 48px;
+@media screen and (max-width: 991px) {
+  .possibilities__card-lessons, .possibilities__card-history {
+    padding: 30px 20px;
+    gap: 15px;
+    height: 250px;
+  }
+  .possibilities__card-lessons h3, .possibilities__card-history h3 {
+    font-size: 16px;
+  }
+  .possibilities__card-lessons p, .possibilities__card-history p {
+    font-size: 14px;
+  }
 }
-.possibilities__cards div {
-  display: block;
-  height: 320px;
-  width: 285px;
-  box-shadow: 0px 10px 50px rgba(64, 71, 226, 0.2);
-  border-radius: 20px;
-  justify-content: center;
+@media screen and (max-width: 576px) {
+  .possibilities__card-lessons, .possibilities__card-history {
+    gap: 15px;
+    width: 240px;
+  }
 }
-
-.possibilities__cards-chat, .possibilities__cards-checkin {
-  background-color: rgba(64, 71, 226, 0.2);
+.possibilities__card-lessons .possibility_card_or-rectangle, .possibilities__card-history .possibility_card_or-rectangle {
+  background: #FCA206;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  padding: 30px 10px;
 }
-
-.possibilities__cards-lessons, .possibilities__cards-history {
-  background-color: rgba(252, 162, 6, 0.2);
+@media screen and (max-width: 991px) {
+  .possibilities__card-lessons .possibility_card_or-rectangle, .possibilities__card-history .possibility_card_or-rectangle {
+    height: 70px;
+    width: 70px;
+    padding: 22px 9px;
+  }
+  .possibilities__card-lessons .possibility_card_or-rectangle img, .possibilities__card-history .possibility_card_or-rectangle img {
+    width: 70%;
+  }
 }
 
 /* Конец стилей для возможностей *//*# sourceMappingURL=possibilities.css.map */

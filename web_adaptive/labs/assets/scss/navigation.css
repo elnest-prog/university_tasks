@@ -4,6 +4,11 @@
   padding-top: 50px;
   margin-bottom: 78px;
 }
+@media screen and (max-width: 1024px) {
+  .navigation {
+    margin-bottom: 30px;
+  }
+}
 
 .navigation__wrap {
   display: flex;

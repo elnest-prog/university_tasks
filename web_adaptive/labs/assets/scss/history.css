@@ -10,16 +10,61 @@
   color: #3F3A51;
   padding-left: 40px;
 }
+@media screen and (max-width: 992px) {
+  .history h2 {
+    padding-top: 30px;
+    font-size: 27px;
+    text-align: center;
+    padding-left: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .history h2 {
+    text-align: left;
+  }
+}
 .history p {
   padding-top: 30px;
   font-size: 18px;
   font-weight: 400;
   padding-left: 40px;
 }
+@media screen and (max-width: 992px) {
+  .history p {
+    font-size: 16px;
+    text-align: center;
+    padding-left: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .history p {
+    text-align: left;
+  }
+}
 .history img {
   float: right;
   padding-left: 0;
   margin-right: 25px;
+}
+@media screen and (max-width: 1400px) {
+  .history img {
+    float: none;
+    width: 100%;
+    padding-top: 130px;
+    display: flex;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;
+    height: auto;
+  }
+}
+@media screen and (max-width: 992px) {
+  .history img {
+    float: none;
+    display: block;
+    padding-top: 35px;
+    filter: drop-shadow(0px 10px 40px rgba(64, 71, 226, 0.2));
+    width: 100%;
+  }
 }
 
 /* Конец стилей для history *//*# sourceMappingURL=history.css.map */

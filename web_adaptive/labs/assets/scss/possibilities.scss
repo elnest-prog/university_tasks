@@ -1,5 +1,4 @@
 /* Стили для возможностей */
-
 .possibilities{
     margin-bottom: 67px;
     h2{
@@ -21,36 +20,113 @@
         font-weight: 400;
         color: #3F3A51;
     }
+    .swiper{
+        .swiper-wrapper {
+padding-top: 30px;
+            display: flex;
+            padding-bottom: 50px;
+        }
+    }
 }
 
-.possibilities__cards{
+.possibilities__card-chat, .possibilities__card-checkin{
+    background-color: #4047E233;
+    margin: auto;
+                height: 340px;
+                width: 100%;
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-top;
+                padding: 50px 20px;
+                text-align: center;
+                border-radius: 15px;
+                box-shadow: 0px 10px 50px 0px rgba(64, 71, 226, 0.2);
+    
+                @media screen and (max-width: 991px) {
+                    padding: 30px 20px;
+                    gap: 15px;
+                    height: 250px;
+                    h3 {
+                        font-size: 16px;
+                    }
+    
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+                @media screen and (max-width: 576px) {
+                    gap: 15px;
+                    width: 240px;
+                }
+    
+                .possibility_card_bl-rectangle {
+                    background: #4047E2;
+                    border-radius: 50%;
+                    height: 100px;
+                    width: 100px;
+                    padding: 30px 10px;
+    
+                    @media screen and (max-width: 991px) {
+                        height: 70px;
+                        width: 70px;
+                        padding: 20px 9px;
+                        img{
+                            width: 70%;
+                        }
+                    }
+                }
+    
+    
+}
+.possibilities__card-lessons, .possibilities__card-history{
+    background-color: #FCA20633;
+    margin: auto;
+    height: 340px;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
-    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    img{
-        margin-bottom: 26px;
-        padding-top: 48px;
-    }
-    div{
-        display: block;
-        height: 320px;
-        width: 285px;
-        box-shadow: 0px 10px 50px #4047E233;
-        border-radius: 20px;
-        justify-content: center;
-    }
-}
+    border-radius: 15px;
+    padding: 50px 20px;
+    box-shadow: 0px 10px 50px 0px rgba(252, 162, 6, 0.2);
+     @media screen and (max-width: 991px) {
+                    padding: 30px 20px;
+                    gap: 15px;
+                    height: 250px;
+                    h3 {
+                        font-size: 16px;
+                    }
+    
+                    p {
+                        font-size: 14px;
+                    }
+                }
 
-
-.possibilities__cards-chat, .possibilities__cards-checkin{
-    background-color: #4047E233;
-}
-.possibilities__cards-lessons, .possibilities__cards-history{
-    background-color: #FCA20633;
+                @media screen and (max-width: 576px) {
+                    gap: 15px;
+                    width: 240px;
+                }
+                                .possibility_card_or-rectangle {
+                    background: #FCA206;
+                    border-radius: 50%;
+                    height: 100px;
+                    width: 100px;
+                    padding: 30px 10px;
+    
+                    @media screen and (max-width: 991px) {
+                        height: 70px;
+                        width: 70px;
+                        padding: 22px 9px;
+                        img{
+                            width: 70%;
+                        }
+                    }
+                }
 }
 
 /* Конец стилей для возможностей */
