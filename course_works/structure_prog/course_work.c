@@ -135,7 +135,7 @@ int main()
             }
             if (counted_answers == 0)
             {
-                printf("Can't find any answers, try anoother interval or polynomial\n\n");
+                printf("Can't find any answers, try another interval or polynomial\n\n");
             }
             else
             {
@@ -497,7 +497,19 @@ double *get_result(polynomial *poly, double left_border, double right_border, in
                 result[*counter] = binary_search(poly, res_with_boundaries[i], res_with_boundaries[i+1]);
                 *counter += 1;
             }
+            else if (fabs((get_y(poly, res_with_boundaries[i]))) < EPSILON)
+            {
+                result[*counter] = res_with_boundaries[i];
+                *counter += 1;
+            }
+            
         }
+        if (fabs((get_y(poly, res_with_boundaries[i]))) < EPSILON)
+        {
+            result[*counter] = res_with_boundaries[i];
+            *counter += 1;
+        }
+        free(res_with_boundaries);
     }
     return result;
 }
