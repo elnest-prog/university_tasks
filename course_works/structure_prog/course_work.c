@@ -135,10 +135,14 @@ int main()
             }
             if (counted_answers == 0)
             {
-                printf("Can't find any answers, try anoother interval or polynomial\n");
+                printf("Can't find any answers, try anoother interval or polynomial\n\n");
+            }
+            else
+            {
+                free(final_result);
             }
             // printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
-            free(final_result);
+
             break;
         }
 
