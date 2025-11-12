@@ -60,11 +60,12 @@ int main()
     int counted_answers = 0;
     // double *answer = NULL;
     int program_mode = 0;
-    interval find_in;
-    polynomial equation;
+    interval find_in = {0.0, 0.0};
+    polynomial equation = {0};
     char input_str[200];
     int i;
     double *final_result;
+    int is_interval_exist = 0;
     for (i = 0; i < 200; i++)
     {
         input_str[i] = 0;
@@ -92,6 +93,7 @@ int main()
             {
                 printf("Entered interval is:\n");
                 printf("%lf %lf\n", find_in.left_border, find_in.right_border);
+                is_interval_exist = 1;
             }
             // printf("%e", EPSILON);
             break;
@@ -109,40 +111,49 @@ int main()
             }
             equation.counted_nomos = 0;
             equation.max_power = 0;
+            find_in.left_border = 0;
+            find_in.right_border = 0;
+            is_interval_exist = 0;
             break;
         case 4:
-            for (i = 0; i < equation.counted_nomos; i++)
+            if ((equation.counted_nomos != 0) && (is_interval_exist != 0))
             {
-                printf("%lfx^%d\n", equation.nomos[i].coefficient, equation.nomos[i].power);
-            }
-            printf("\n");
+                for (i = 0; i < equation.counted_nomos; i++)
+                {
+                    printf("%lfx^%d\n", equation.nomos[i].coefficient, equation.nomos[i].power);
+                }
+                printf("\n");
 
-            // counted_answers = calculate_result(&answer, &equation, &find_in);
+                // counted_answers = calculate_result(&answer, &equation, &find_in);
 
-            // for (i = 0; i < counted_answers; i++)
-            // {
-            //     printf("%lf ", answer[i]);
-            // }
+                // for (i = 0; i < counted_answers; i++)
+                // {
+                //     printf("%lf ", answer[i]);
+                // }
 
-            // // printf("%lf\n", get_y(&equation, 1));
-            // printf("\nNOT HERE\n");
-            // printf("\n\n%lf - result of binary search\n", binary_search(&equation,find_in.left_border, find_in.right_border));
-            // printf("\nMAYBE HERE\n");
-            final_result = get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers);
-            for (i = 0; i < counted_answers; i++)
-            {
-                printf("%lf\n", final_result[i]);
-            }
-            if (counted_answers == 0)
-            {
-                printf("Can't find any answers, try another interval or polynomial\n\n");
+                // // printf("%lf\n", get_y(&equation, 1));
+                // printf("\nNOT HERE\n");
+                // printf("\n\n%lf - result of binary search\n", binary_search(&equation,find_in.left_border, find_in.right_border));
+                // printf("\nMAYBE HERE\n");
+                final_result = get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers);
+                for (i = 0; i < counted_answers; i++)
+                {
+                    printf("%lf\n", final_result[i]);
+                }
+                if (counted_answers == 0)
+                {
+                    printf("Can't find any answers, try another interval or polynomial\n\n");
+                }
+                else
+                {
+                    free(final_result);
+                }
+                // printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
             }
             else
             {
-                free(final_result);
+                printf("Program need an interval and a polynomial to calculate result\n\n");
             }
-            // printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
-
             break;
         }
 
