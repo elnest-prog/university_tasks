@@ -64,6 +64,7 @@ int main()
     polynomial equation;
     char input_str[200];
     int i;
+    double *final_result;
     for (i = 0; i < 200; i++)
     {
         input_str[i] = 0;
@@ -114,6 +115,7 @@ int main()
             {
                 printf("%lfx^%d\n", equation.nomos[i].coefficient, equation.nomos[i].power);
             }
+            printf("\n");
 
             // counted_answers = calculate_result(&answer, &equation, &find_in);
 
@@ -126,7 +128,13 @@ int main()
             // printf("\nNOT HERE\n");
             // printf("\n\n%lf - result of binary search\n", binary_search(&equation,find_in.left_border, find_in.right_border));
             // printf("\nMAYBE HERE\n");
-            printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
+            final_result = get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers);
+            for (i = 0; i < (int)sizeof(final_result); i++)
+            {
+                printf("%lf\n", final_result[i]);
+            }
+
+            // printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
 
             break;
         }
@@ -459,20 +467,30 @@ double *get_result(polynomial *poly, double left_border, double right_border, in
     }
     else
     {
-        int i = 0;
-        int *roots_counter;
-        polynomal *derivative = get_derivative(&poly);
-        temp_result = get_result(derivative, left_border, right_border, roots_counter);
-        free(derivative);
-        for (i; i<=roots_counter; i++)
+        int i;
+        int roots_counter = 0;
+        polynomial *derivative = get_derivative(poly);
+        double *temp_result = get_result(derivative, left_border, right_border, &roots_counter);
+        double *res_with_boundaries = malloc((roots_counter+2)*sizeof(polynomial));
+        for (i = 0; i < roots_counter; i++)
         {
-            if (temp_result[i] < 0 && temp_result[i+1] >= 0 || temp_result[i] >= 0 && temp_result[i+1] < 0)
+            res_with_boundaries[i+1] = temp_result[i];
+        }
+        res_with_boundaries[0] = left_border;
+        res_with_boundaries[roots_counter + 1] = right_border;
+        if (temp_result != 0)
+        {
+            free(temp_result);
+        }
+        free(derivative);
+        for (i=0; i < roots_counter+1; i++)
+        {
+            if (((get_y(poly, res_with_boundaries[i])) < 0 && (get_y(poly, res_with_boundaries[i+1])) >= 0) || ((get_y(poly, res_with_boundaries[i])) >= 0 && (get_y(poly, res_with_boundaries[i+1])) < 0))
             {
-                result[] = binary_search(&poly, &left_border, &right_border);
-                counter += 1;
+                result[*counter] = binary_search(poly, res_with_boundaries[i], res_with_boundaries[i+1]);
+                *counter += 1;
             }
         }
-
     }
     return result;
 }
