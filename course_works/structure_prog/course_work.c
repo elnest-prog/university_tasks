@@ -129,13 +129,16 @@ int main()
             // printf("\n\n%lf - result of binary search\n", binary_search(&equation,find_in.left_border, find_in.right_border));
             // printf("\nMAYBE HERE\n");
             final_result = get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers);
-            for (i = 0; i < (int)sizeof(final_result); i++)
+            for (i = 0; i < counted_answers; i++)
             {
                 printf("%lf\n", final_result[i]);
             }
-
+            if (counted_answers == 0)
+            {
+                printf("Can't find any answers, try anoother interval or polynomial\n");
+            }
             // printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
-
+            free(final_result);
             break;
         }
 
