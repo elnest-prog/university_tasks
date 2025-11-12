@@ -430,6 +430,7 @@ double *get_result(polynomial *poly, double left_border, double right_border, in
 {
     double *result = malloc(poly->max_power*sizeof(double));
     *counter = 0;
+
     if (poly->nomos->power == 1)
     {
         if ((poly->counted_nomos == 2) && (poly->nomos[1].coefficient != 0))
@@ -455,6 +456,23 @@ double *get_result(polynomial *poly, double left_border, double right_border, in
                 *counter += 1;
             }
         }
+    }
+    else
+    {
+        int i = 0;
+        int *roots_counter;
+        polynomal *derivative = get_derivative(&poly);
+        temp_result = get_result(derivative, left_border, right_border, roots_counter);
+        free(derivative);
+        for (i; i<=roots_counter; i++)
+        {
+            if (temp_result[i] < 0 && temp_result[i+1] >= 0 || temp_result[i] >= 0 && temp_result[i+1] < 0)
+            {
+                result[] = binary_search(&poly, &left_border, &right_border);
+                counter += 1;
+            }
+        }
+
     }
     return result;
 }
