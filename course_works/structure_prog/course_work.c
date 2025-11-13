@@ -125,11 +125,11 @@ int main()
                 printf("\n");
                 if (equation.nomos->coefficient == 0 && equation.nomos->power == 0)
                 {
-                    printf("Equation have infinity number of answers");
+                    printf("Equation have infinity number of answers\n\n");
                 }
                 else if(equation.nomos->coefficient != 0 && equation.nomos->power == 0)
                 {
-                    printf("Equation doesn't have any answers");
+                    printf("Equation doesn't have any answers\n\n");
                 }
                 else
                 {
