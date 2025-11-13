@@ -117,12 +117,7 @@ int main()
             break;
         case 4:
             if ((equation.counted_nomos != 0) && (is_interval_exist != 0))
-            {
-                for (i = 0; i < equation.counted_nomos; i++)
-                {
-                    printf("%lfx^%d\n", equation.nomos[i].coefficient, equation.nomos[i].power);
-                }
-                printf("\n");
+            {;
                 if (equation.nomos->coefficient == 0 && equation.nomos->power == 0)
                 {
                     printf("Equation have infinity number of answers\n\n");
