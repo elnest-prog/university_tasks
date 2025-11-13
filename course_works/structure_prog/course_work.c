@@ -40,7 +40,7 @@ double binary_search(polynomial *poly, double left_border, double right_border);
 
 double *get_result(polynomial *poly, double left_border, double right_border, int *counter);
 
-void copy_polynomial(polynomial *poly_src, polynomial *poly_dest);
+// void copy_polynomial(polynomial *poly_src, polynomial *poly_dest);
 
 void print_menu()
 {
@@ -104,7 +104,7 @@ int main()
             equation.counted_nomos = input_converter(input_str, &equation);
             break;
         case 3:
-            for (i = 0; i < MAX_POWER; i++)
+            for (i = 0; i < MAX_POWER; i++)/*поправить обнуление mamset?*/
             {
                 equation.nomos[i].coefficient = 0.0;
                 equation.nomos[i].power = 0;
@@ -117,7 +117,7 @@ int main()
             break;
         case 4:
             if ((equation.counted_nomos != 0) && (is_interval_exist != 0))
-            {;
+            {
                 if (equation.nomos->coefficient == 0 && equation.nomos->power == 0)
                 {
                     printf("Equation have infinity number of answers\n\n");
@@ -224,7 +224,7 @@ int input_converter(char *src, polynomial *equation)
         }
         else if (*cursor == '-')
         {
-            sign = -1;
+            sign = -1;/*менять знаки */
             cursor++; /*можно оптимизировать*/
         }
 
@@ -379,15 +379,15 @@ double get_y(polynomial *poly, double x)
     return result;
 }
 
-void copy_polynomial(polynomial *poly_src, polynomial *poly_dest)
-{
-    int i = 0;
-    for (i = 0; i < poly_src->counted_nomos; i++)
-    {
-        poly_dest->nomos[i].coefficient = poly_src->nomos[i].coefficient;
-        poly_dest->nomos[i].power = poly_src->nomos[i].power;
-    }
-}
+// void copy_polynomial(polynomial *poly_src, polynomial *poly_dest)
+// {
+//     int i = 0;
+//     for (i = 0; i < poly_src->counted_nomos; i++)
+//     {
+//         poly_dest->nomos[i].coefficient = poly_src->nomos[i].coefficient;
+//         poly_dest->nomos[i].power = poly_src->nomos[i].power;
+//     }
+// }
 
 polynomial *get_derivative(polynomial *poly)
 {
