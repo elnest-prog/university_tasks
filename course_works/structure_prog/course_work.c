@@ -123,32 +123,31 @@ int main()
                     printf("%lfx^%d\n", equation.nomos[i].coefficient, equation.nomos[i].power);
                 }
                 printf("\n");
-
-                // counted_answers = calculate_result(&answer, &equation, &find_in);
-
-                // for (i = 0; i < counted_answers; i++)
-                // {
-                //     printf("%lf ", answer[i]);
-                // }
-
-                // // printf("%lf\n", get_y(&equation, 1));
-                // printf("\nNOT HERE\n");
-                // printf("\n\n%lf - result of binary search\n", binary_search(&equation,find_in.left_border, find_in.right_border));
-                // printf("\nMAYBE HERE\n");
-                final_result = get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers);
-                for (i = 0; i < counted_answers; i++)
+                if (equation.nomos->coefficient == 0 && equation.nomos->power == 0)
                 {
-                    printf("%lf\n", final_result[i]);
+                    printf("Equation have infinity number of answers");
                 }
-                if (counted_answers == 0)
+                else if(equation.nomos->coefficient != 0 && equation.nomos->power == 0)
                 {
-                    printf("Can't find any answers, try another interval or polynomial\n\n");
+                    printf("Equation doesn't have any answers");
                 }
                 else
                 {
-                    free(final_result);
+                    final_result = get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers);
+                    for (i = 0; i < counted_answers; i++)
+                    {
+                        printf("%lf\n", final_result[i]);
+                    }
+                    if (counted_answers == 0)
+                    {
+                        printf("Can't find any answers, try another interval or polynomial\n\n");
+                    }
+                    else
+                    {
+                        free(final_result);
+                    }
+                    // printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
                 }
-                // printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
             }
             else
             {
