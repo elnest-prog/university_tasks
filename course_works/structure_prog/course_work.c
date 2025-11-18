@@ -40,8 +40,6 @@ double binary_search(polynomial *poly, double left_border, double right_border);
 
 double *get_result(polynomial *poly, double left_border, double right_border, int *counter);
 
-// void copy_polynomial(polynomial *poly_src, polynomial *poly_dest);
-
 void print_menu()
 {
     printf("------------------------------\n"
@@ -58,7 +56,6 @@ void print_menu()
 int main()
 {
     int counted_answers = 0;
-    // double *answer = NULL;
     int program_mode = 0;
     interval find_in = {0.0, 0.0};
     polynomial equation = {0};
@@ -66,16 +63,8 @@ int main()
     int i;
     double *final_result;
     int is_interval_exist = 0;
-    for (i = 0; i < 200; i++)
-    {
-        input_str[i] = 0;
-    }
-    
-    for (i = 0; i < MAX_POWER; i++)
-    {
-        equation.nomos[i].coefficient = 0.0;
-        equation.nomos[i].power = 0;
-    }
+    memset(input_str, 0, sizeof(input_str));
+    memset(&equation, 0, sizeof(equation));
     print_menu();
     scanf("%d", &program_mode);
     while (program_mode != 0)
@@ -95,24 +84,30 @@ int main()
                 printf("%lf %lf\n", find_in.left_border, find_in.right_border);
                 is_interval_exist = 1;
             }
-            // printf("%e", EPSILON);
             break;
 
         case 2:
             scanf("%*[^\n]");
             scanf("%s", input_str);
             equation.counted_nomos = input_converter(input_str, &equation);
+            if (equation.counted_nomos != 0)
+            {
+                printf("Entered polynimoal is:\n");
+                for (i = 0; i < equation.counted_nomos; i++)
+                {
+                    printf("%lf*x^%d ", equation.nomos[i].coefficient, equation.nomos[i].power);
+                }
+                printf("\n");
+            }
+            else
+            {
+                printf("There is something wrong with your polynomial, try again\n");
+            }
+            
             break;
         case 3:
-            for (i = 0; i < MAX_POWER; i++)/*поправить обнуление mamset?*/
-            {
-                equation.nomos[i].coefficient = 0.0;
-                equation.nomos[i].power = 0;
-            }
-            equation.counted_nomos = 0;
-            equation.max_power = 0;
-            find_in.left_border = 0;
-            find_in.right_border = 0;
+            memset(&equation, 0, sizeof(equation));
+            memset(&find_in, 0, sizeof(find_in));
             is_interval_exist = 0;
             break;
         case 4:
@@ -141,7 +136,6 @@ int main()
                     {
                         free(final_result);
                     }
-                    // printf("%lf",*get_result(&equation, find_in.left_border, find_in.right_border, &counted_answers));
                 }
             }
             else
@@ -220,12 +214,15 @@ int input_converter(char *src, polynomial *equation)
 
         if (*cursor == '+')
         {
-            cursor++; /*можно оптимизировать*/
+            cursor++;
         }
         else if (*cursor == '-')
         {
-            sign = -1;/*менять знаки */
-            cursor++; /*можно оптимизировать*/
+            while (*cursor == '-')
+            {
+                sign *= -1;
+                cursor++;
+            }
         }
 
         while (*cursor == ' ')
@@ -235,8 +232,6 @@ int input_converter(char *src, polynomial *equation)
 
         int counted_digit = 0;
         counted_digit = read_coefficient(cursor, &temp_coeff);
-
-        // printf("%lf %d\n", temp_coeff, counted_digit);
 
         if (counted_digit <= 1)
         {
@@ -272,9 +267,6 @@ int input_converter(char *src, polynomial *equation)
             temp_monomial.power = 0;
         }
 
-        // printf("ERROR 6\n");
-        // printf("%lf", temp_coeff);
-
         temp_monomial.coefficient = temp_coeff * sign;
 
         while (*cursor == ' ')
@@ -293,10 +285,9 @@ int input_converter(char *src, polynomial *equation)
 
             if ('0' <= *cursor && *cursor <= '9')
             {
-                sscanf(cursor, "%lf%n", &temp_degree, &pow_quantity); /*считываем из курсора число double и кол-во считанных символов записываем в result*/
+                sscanf(cursor, "%lf%n", &temp_degree, &pow_quantity);
                 cursor += pow_quantity;
                 temp_monomial.power = temp_degree;
-                // printf("%d", pow_quantity);
             }
         }
 
@@ -356,8 +347,6 @@ int calculate_result(double **result, polynomial *equation, interval *borders)
             }
             counter += 1;
         }
-        
-        // printf("WAR %lf",result[0]);
     }
     return counter;
 }
@@ -378,16 +367,6 @@ double get_y(polynomial *poly, double x)
 
     return result;
 }
-
-// void copy_polynomial(polynomial *poly_src, polynomial *poly_dest)
-// {
-//     int i = 0;
-//     for (i = 0; i < poly_src->counted_nomos; i++)
-//     {
-//         poly_dest->nomos[i].coefficient = poly_src->nomos[i].coefficient;
-//         poly_dest->nomos[i].power = poly_src->nomos[i].power;
-//     }
-// }
 
 polynomial *get_derivative(polynomial *poly)
 {
@@ -418,7 +397,7 @@ double binary_search(polynomial *poly, double left_border, double right_border)
     double rboundary = get_y(poly, right_border);
     while(!(dot > -EPSILON && dot < EPSILON))
     {
-        if (lboundary < rboundary) /*функция возрастает*/
+        if (lboundary < rboundary)
         {
             if(dot > EPSILON)
             {
