@@ -1,7 +1,7 @@
 def process_sequence(predicate, seq):
     tmp_copy = list(seq)
     if predicate(seq):
-        tmp_copy.sort(reverse=True)
+        tmp_copy.reverse()
         return tmp_copy
     return tmp_copy
 def is_sorted(seq):
