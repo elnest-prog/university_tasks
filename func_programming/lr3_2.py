@@ -1,7 +1,4 @@
-def create_pairs(arr, index=0, result=None):
-    if result is None:
-        result = []
-    
+def create_pairs(arr, index=0, result=[]):
     if index >= len(arr):
         return result
     
