@@ -4,4 +4,4 @@
       (list (third arglist) (second arglist) (first arglist))
       (list (first arglist) (second arglist) (third arglist))
   ))
-(print (sorting '(10 8 2)))
+(print (sorting '(10 15 2)))
